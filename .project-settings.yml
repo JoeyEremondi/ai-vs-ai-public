@@ -1,3 +1,6 @@
+binary-ghc-args:
+- -O
+- -threaded
 module-template: ! 'module MODULE_NAME where
 
 '
@@ -7,22 +10,15 @@ extensions:
   QuasiQuotes: true
   TypeFamilies: true
   MultiParamTypeClasses: true
-environment: ghc-7.4.2-stable-13.09
+environment: ghc-7.8-stable-14.09
+auto-hidden: []
 cabal-file: project.cabal
-hidden-packages: ''
-modules:
-  Foundation:
-    filename: src/Foundation.hs
-  Handler.Home:
-    filename: src/Handler/Home.hs
-  Handler.Markdown:
-    filename: src/Handler/Markdown.hs
-  Import:
-    filename: src/Import.hs
-  Handler.Fib:
-    filename: src/Handler/Fib.hs
-  Main(src/Main.hs):
-    filename: src/Main.hs
 version: 1
-extra-packages: ''
-ghc-args: []
+extra-packages: ! 'Git: https://github.com/JoeyEremondi/ai-vs-ai-common.git 8ba15a730120896baf07ed6f1b29f2446b4cea34
+
+  Hackage : astar 0.2.1
+
+'
+ghc-args:
+- -v
+excluded-modules: []
